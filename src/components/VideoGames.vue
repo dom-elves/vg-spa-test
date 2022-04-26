@@ -1,12 +1,9 @@
 <template>
 
-    <div>
-        <p class="text-white" v-if="games == null">Games is null</p>
-        <p class="text-white" v-else>Games are here?</p>
-        <p v-for="game in games" :key="game.id">
-        {{ game.rating }}
-        </p>
-        
+    <div v-for="game in games" :key="game.id" class="p-5 bg-[#0e1a2b] mb-5"> 
+        <h1 class="text-white text-2xl">{{ game.name }}</h1>
+        <p class="text-[#c1d1e8] mb-5">Release Date: {{ game.first_release_date }}</p>
+        <p class="text-[#c1d1e8]">[Summary] {{ game.summary }}</p>
     </div>
     
 </template>
@@ -29,6 +26,8 @@ export default {
 
     this.axiosRequest()
 
+    // this.convertDate()
+
   },
 
   methods: {
@@ -39,8 +38,18 @@ export default {
 
         .then(response => {
 
-          console.log(response.data);
+          // console.log(response.data);
+          const data = response.data;
+          console.log(data);
+
+          data.forEach( game => {
+
+            let date = game.first_release_date;
+            let jsDate = new Date(date);
+        
+            game.first_release_date = jsDate;
             
+          })
             this.games = response.data;
         })
 
@@ -48,7 +57,7 @@ export default {
           console.log('error', error);
         })
 
-    }
+    },
   }
 }
 

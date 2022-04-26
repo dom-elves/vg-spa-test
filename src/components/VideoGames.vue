@@ -3,9 +3,9 @@
     <div>
         <p class="text-white" v-if="games == null">Games is null</p>
         <p class="text-white" v-else>Games are here?</p>
-        <div v-for="game in games" :key="game.id">
+        <p v-for="game in games" :key="game.id">
         {{ game.rating }}
-        </div>
+        </p>
         
     </div>
     
@@ -21,7 +21,7 @@ export default {
 
   data() {
       return {
-          games: null,
+          games: [],
       }
   },
 
@@ -38,11 +38,14 @@ export default {
       axios.get('https://public.connectnow.org.uk/applicant-test/')
 
         .then(response => {
-            this.games = response
+
+          console.log(response.data);
+            
+            this.games = response.data;
         })
 
         .catch(error => {
-          console.log(error);
+          console.log('error', error);
         })
 
     }

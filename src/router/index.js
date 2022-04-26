@@ -3,15 +3,15 @@ import ContactPage from "../components/ContactPage.vue"
 import VideoGames from "../components/VideoGames.vue"
 
 const routes = [
-    { path: '/', component: ContactPage },
-    { path: '/about', component: VideoGames },
+    { path: '/Contact', component: ContactPage },
+    { path: '/VideoGames', component: VideoGames },
   ]
   
   
   const router = createRouter({
    
     history: createWebHistory(),
-    routes,
+    routes: routes,
   
   })
 

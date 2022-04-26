@@ -1,9 +1,11 @@
 <template>
+
     <div>
 
+        
 
-<p>video games</p>
-</div>
+    </div>
+
 </template>
 <script>
 

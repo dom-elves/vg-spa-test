@@ -1,35 +1,30 @@
 <template>
-<div>
-  
-  <video-games></video-games>
-  <contact-page></contact-page>
-  <router-link to="/videogames">Video Games</router-link>
-  <router-link to="/contact">Contact</router-link>
 
-  <!-- route outlet -->
-  <!-- component matched by the route will render here -->
-  <router-view></router-view>
-  
+  <div class="p-5">
+    
+    <div class="text-3xl text-white flex flex-col p-3 h-100">
 
-</div>
+      <router-link to="/videogames" class="mb-10">VIDEO GAMES</router-link>
+    
+      <router-link to="/contact" class="mb-12">CONTACT</router-link>
+     
+    </div>
+
+    <router-view></router-view>
+    
+
+  </div>
+
 </template>
 
 <script>
-import VideoGames from './components/VideoGames.vue'
-import ContactPage from './components/ContactPage.vue'
+
 import axios from 'axios'
 
 
 export default {
 
   name: 'App',
-
-  components: {
-
-    VideoGames,
-    ContactPage
-
-  },
 
   mounted() {
 
@@ -56,12 +51,11 @@ export default {
 </script>
 
 <style>
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-image: linear-gradient(#081221 , #03080f);
+
 }
 </style>

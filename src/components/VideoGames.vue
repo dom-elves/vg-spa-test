@@ -1,16 +1,19 @@
 <template>
 
     <div>
-
-        <p>{{ games }}</p>
-
+        <p class="text-white" v-if="games == null">Games is null</p>
+        <p class="text-white" v-else>Games are here?</p>
+        <div v-for="game in games" :key="game.id">
+        {{ game.rating }}
+        </div>
+        
     </div>
-
+    
 </template>
+
 <script>
 
 import axios from 'axios'
-
 
 export default {
 

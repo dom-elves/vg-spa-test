@@ -1,8 +1,15 @@
 <template>
 <div>
-
+  
   <video-games></video-games>
   <contact-page></contact-page>
+  <router-link to="/videogames">Video Games</router-link>
+  <router-link to="/contact">Contact</router-link>
+
+  <!-- route outlet -->
+  <!-- component matched by the route will render here -->
+  <router-view></router-view>
+  
 
 </div>
 </template>
@@ -11,6 +18,7 @@
 import VideoGames from './components/VideoGames.vue'
 import ContactPage from './components/ContactPage.vue'
 import axios from 'axios'
+
 
 export default {
 

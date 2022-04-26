@@ -1,6 +1,6 @@
 <template>
-  <div class="text-[#c1d1e8] pageFont">
-
+  <div class="text-[#c1d1e8] pageFont md:w-100 md:flex md:flex-col md:items-center">
+    <div class="md:w-[400px]">
     <h1 class="text-2xl mb-10">GET IN TOUCH</h1>
 
     <p class="mb-10"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
@@ -20,7 +20,6 @@
           <label class="mb-2">Email Address <span class="text-[#5692e8]">*</span></label>
           <input class="bg-[#182c47] h-[35px]">
         </div>
-
       </div>
 
       <div class="flex flex-col w-full p-3">
@@ -33,7 +32,7 @@
       </div>
 
     </form>
-
+</div>
 </div>
 </template>
 <script>

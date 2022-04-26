@@ -2,9 +2,9 @@
 
   <div class="p-5">
     
-    <div class="text-3xl text-white flex flex-col p-3 h-100">
+    <div class="text-3xl text-white flex flex-col p-3 h-100 md:flex-row">
 
-      <router-link to="/videogames" class="mb-10">VIDEO GAMES</router-link>
+      <router-link to="/videogames" class="mb-10 md:mr-20">VIDEO GAMES</router-link>
     
       <router-link to="/contact" class="mb-12">CONTACT</router-link>
      

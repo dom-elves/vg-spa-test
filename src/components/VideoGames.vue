@@ -13,12 +13,13 @@
 
       <div class="flex flex-col mb-3">
         <label class="text-white mb-1">Minimum score</label>
-        <input class="bg-[#182c47]">
+        <input class="bg-[#182c47]" id="score-search" @input="filterByScore()">
       </div>
 
 
       <label class="text-white mb-1">Order By</label>
-      <select>
+      <select class="bg-[#182c47] text-white">
+        <option class="bg-[#182c47] text-white">Release Date</option>
         <option class="bg-[#182c47] text-white">Score</option>
         <option class="bg-[#182c47] text-white">Name</option>
       </select>
@@ -31,7 +32,7 @@
 
     </div>
 
-    <div v-for="game in games" :key="game.id" class="bg-[#0e1a2b] mb-5"> 
+    <div v-for="game in games" :key="game.id" class="bg-[#0e1a2b] mb-5" :id="game.id"> 
 
         <div class="w-full h-[150px] bg-black p-3 flex justify-end">
 
@@ -82,9 +83,8 @@ export default {
 
         .then(response => {
 
-          
           const data = response.data;
-          console.log(data);
+          // console.log(data);
           //looping over data to make some changes
           data.forEach( game => {
 
@@ -113,9 +113,37 @@ export default {
         .catch(error => {
           console.log('error', error);
         })
-        .finally(() => this.loading = false);
 
+        .finally(() => this.loading = false);
     },
+
+
+    filterByScore() {
+
+      const inputField = document.getElementById('score-search');
+
+      let input = inputField.value;
+
+      // console.log(input);  
+      let games = this.games;
+
+      games.forEach( game => {
+
+        if (input >= game.rating) {
+          
+          let lowerRatedGame = document.getElementById(game.id);
+          lowerRatedGame.classList.add('hidden');
+          console.log('hid an element')
+          inputField.addEventListener('input', function() {
+            
+            lowerRatedGame.classList.remove('hidden');
+            console.log('unhid and element');
+          })
+        }
+      })
+
+      
+    }
   }
 }
 

@@ -19,34 +19,10 @@
 
 <script>
 
-import axios from 'axios'
-
-
 export default {
 
   name: 'App',
 
-  mounted() {
-
-    this.axiosRequest()
-
-  },
-
-  methods: {
-
-    axiosRequest() {
-      
-      axios.get('https://public.connectnow.org.uk/applicant-test/')
-
-        .then( function(response) {
-          console.log(response.data);
-        })
-
-        .catch( function(error) {
-          console.log(error);
-        })
-    }
-  }
 }
 </script>
 
